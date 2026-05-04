@@ -1,0 +1,94 @@
+html,body{
+    height: 100%;
+    margin: 0%;
+    
+}
+body{
+    margin: 0;
+    background-image: url('5.jpg');
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+select{
+    display: block;
+    margin: 50px auto;
+    border-radius: 35px;
+    height: 85px;
+    width: 250px;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px pink;
+    background: linear-gradient(to left,rgba(255, 192, 203, 0.732),rgba(223, 106, 126, 0.71));
+    background-color: rgba(255, 182, 193, 0.3); 
+    color: rgba(130, 120, 120, 0.819); 
+    border: none;
+    font-family: 'poppins',sans-serif;
+}
+#a{
+    background-color: pink;
+    text-transform: capitalize;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.682);
+}
+#b{
+    background-color: rgba(55, 60, 137, 0.607);
+    text-transform: capitalize;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.682);
+}
+#c{
+    background-color: rgba(40, 89, 79, 0.533);
+    text-transform: capitalize;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.682);
+}
+#timer{
+    font-size: 200px;
+    text-align: center;
+    background: linear-gradient(to right, rgb(198, 96, 161), rgba(147, 17, 45, 0.829));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+#button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+#start,#pause,#reset,.btt{
+    font-size: 30px;
+    padding: 10px 20px;
+    border-radius: 35px;
+    background: linear-gradient(to left, rgba(228, 166, 176, 0.753), rgb(223, 106, 126));
+    color: rgba(97, 87, 87, 0.819);
+    font-family: 'poppins', sans-serif;
+    font-style: italic;
+    text-shadow: 2px 2px 2px rgb(255, 184, 196);
+}
+#start:hover,#pause:hover,#reset:hover{
+    background: linear-gradient(to right, rgb(228, 166, 176), rgb(223, 106, 126)); 
+    transition: 1s;   
+}
+select:hover{
+    background: linear-gradient(to right, rgb(228, 166, 176), rgb(223, 106, 126)); 
+    transition: 1s; 
+}
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    filter: brightness(0.85);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

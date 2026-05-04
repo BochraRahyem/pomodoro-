@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link id="theme-style" rel="stylesheet" href="blush.css">
+</head>
+<body>
+    <div id="glass">
+    <select id="themeSelect">
+        <option value="blush" id="a">Blush Bloom🌸</option>
+        <option value="ocean" id="b">Lavender Tide 💜</option>
+        <option value="emerald" id="c">Emerald Zen☘️</option>
+    </select>
+    </div>
+    <div id="timer">25:00</div>
+    <div id="button">
+        <button id="start" onclick="startTimer()">Start</button>
+        <button id="pause" onclick="pauseTimer()">Pause</button>
+        <button id="reset" onclick="resetTimer()">Reset</button>
+        <button  class="btt" onclick="setFocus()">25 min</button>
+        <button class="btt" onclick="setBreak()">5 min</button>
+    </div> 
+    <script>
+    document.getElementById("timer")   
+    let time = 25 * 60;
+    let timer = null;
+
+    function updateDisplay() {
+    let min = Math.floor(time / 60);
+    let sec = time % 60;
+
+    document.getElementById("timer").innerText =
+        min + ":" + (sec < 10 ? "0" : "") + sec;
+    }
+
+    function startTimer() {
+    if (timer !== null) return;
+
+    timer = setInterval(() => {
+        time--;
+        updateDisplay();
+
+        if (time <= 0) {
+        clearInterval(timer);
+        timer = null;
+        alert("Time's up!");
+        }
+    }, 1000);
+    }
+
+    function pauseTimer() {
+    clearInterval(timer);
+    timer = null;
+    }
+
+    function resetTimer() {
+    clearInterval(timer);
+    timer = null;
+    time = 25 * 60;
+    updateDisplay();
+    }
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("themeSelect").addEventListener("change", function () {
+
+        let theme = this.value;
+
+        if (theme === "blush") {
+            document.body.style.backgroundImage = "url('5.jpg')";
+        }
+
+        else if (theme === "ocean") {
+            document.body.style.backgroundImage = "url('b7.jpg')";
+        }
+
+        else if (theme === "emerald") {
+            document.body.style.backgroundImage = "url('g2.jpg')";
+        }
+
+    });
+
+
+});
+    document.getElementById("themeSelect").addEventListener("change", function() {
+
+        if (this.value === "blush") {
+            document.getElementById("theme-style").href = "blush.css";
+        }
+
+        else if (this.value === "ocean") {
+            document.getElementById("theme-style").href = "ocean.css";
+        }
+
+        else if (this.value === "emerald") {
+            document.getElementById("theme-style").href = "emerald.css";
+        }
+
+    });
+    function setFocus() {
+    clearInterval(timer);
+    timer = null;
+    time = 25 * 60;
+    updateDisplay();
+}
+
+function setBreak() {
+    clearInterval(timer);
+    timer = null;
+    time = 5 * 60;
+    updateDisplay();
+}
+
+
+    </script>
+
+</body>
+</html>
